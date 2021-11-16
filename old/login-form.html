@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="CSS_files/login-form.css">
+      
+     <script src="JS_files/login-form.js"></script>   <!--  --> 
+    
+    </head>
+    <body style="background-size: contain;">
+        <div class="container">
+            <div class="container form bg-white pt-5 mt-4 mb-3">
+              <!--change after click on sign up-->
+                <p class="text-center login-heading hide-me">login</p>
+                <div class="container hide-me">
+                    <div class="row">
+                        <div class="col mt-4 pl-5 pr-5">
+                            <p class="username">username</p>
+                            <div class="row mt-4">
+                                <div class="col-2 text-center pt-1 pr-0">
+                                    <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                                </div>
+                                <div class="col-10 pl-0">
+                                    <input type="text" placeholder="Type your username" class='input-1'>
+                                </div>
+                            </div>
+                            <hr class="hr-1">
+                            <div class="hide"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mt-4 pl-5 pr-5">
+                            <p class="username">Password</p>
+                            <div class="row mt-4">
+                                <div class="col-2 text-center pt-1 pr-0">
+                                    <i class="fa fa-lock" aria-hidden="true" id="lock"></i>
+                                </div>
+                                <div class="col-10 pl-0">
+                                    <input type="password" placeholder="Type your password" class="input-2">
+                                </div>
+                            </div>
+                            <hr class="hr-2">
+                            <div class="hide-1"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-right pr-5">
+                            <a href="#"><span class="forget-password">Forget password?</span></a>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col pl-5 pr-5">
+                            <a href="login-ecommerce.html"><span class="btn btn-block text-white login-button">login</span></a>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col text-center">
+                            <span style="text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:15px;font-weight:600;color:rgb(148, 141, 141)">or sign up using</span>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class='col text-center'>
+                            <span class="facebook-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                            <span class="twitter-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                            <span class="google-icon"><i class="fa fa-google" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col text-center">
+                            <span style="text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:15px;font-weight:600;color:rgb(148, 141, 141)">or sign up using</span>
+                        </div>
+                        <div class="col-12 text-center pt-3">
+                            <a href="#"><span class="sign-up">sign up</span></a>
+                        </div>
+                    </div>
+                </div>
+                                                                        <!--change it-->
+                <p class="text-center login-heading show-me">sign up</p>
+                
+              <form method="POST" action="scripts/signup.php" id="signup-form" >  
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">First name</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" placeholder="Type your username" name="first_name" class='first-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="first-name-hide"></div>
+                    </div>
+                </div>
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Last name</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" placeholder="Type your username" name="last_name" class='last-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="last-name-hide"></div>
+                    </div>
+                </div>
+
+                
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Gender</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <option name="gender">
+                                    <select>Male</select>
+                                    <select>Female</select>
+                                </option>
+                               
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="last-name-hide"></div>
+                    </div>
+                </div>
+
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Business Name</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" name="business_name" placeholder="Type your Bussiness Name" class='bussiness-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="bussiness-name-hide"></div>
+                    </div>
+                </div>
+
+                
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Phone Number</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fas fa-phone" aria-hidden="true" id="user"></i>
+                                
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="number" name="phone_number" placeholder="Type your Phone Number" class='phone-number' required>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="phone-number-hide" style="color: red;"></div>
+                    </div>
+                </div>
+
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Location</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" name="location" placeholder="Type your Location " class='last-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="last-name-hide"></div>
+                    </div>
+                </div>
+
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Address</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" name="address" placeholder="Type your Address" class='last-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="last-name-hide"></div>
+                    </div>
+                </div>
+
+                        <div class="row show-me"">
+                            <div class="col mt-4 pl-5 pr-5">
+                        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                        <p><label for="file" style="cursor: pointer;" class="btn btn-success">Upload Image</label></p>
+                        <p><img id="output" width="200""/></p>
+                    </div>
+                </div>
+
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Password</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-lock" aria-hidden="true" id="lock"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="password" name="password" placeholder="Type your password" class="password-signup" id="password">
+                            </div>
+                        </div>
+                        <hr class="hr-2">
+                        <div class="password-signup-hide"></div>
+                    </div>
+                </div>
+                <div class="row show-me">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Confirm-password</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-lock" aria-hidden="true" id="lock"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="password" name="confirm_password" placeholder="Type your password" class="confirm-password-signup" id="confirm_password">
+                            </div>
+                        </div>
+                        <hr class="hr-2">
+                        <div align="center" style="color: red; margin: 5px;">
+                            <span id='message'></span>
+                          </div>
+                        <div class="confirm-password-signup-hide"></div>
+                    </div>
+                </div>
+
+                <div class="row show-me">
+                    <div class="col pl-5">
+                        <a href="#"><span class="forget-password">I accept the <span style="text-transform:capitalize;color:blue">terms of use</span>&
+                            <span style="text-transform:capitalize;color:blue">privacy policy</span> </a>
+                    </div>
+                </div>
+                <div class="row mt-4 show-me">
+                    <div class="col pl-5 pr-5">
+                        <a href="login-ecomarce.html"><input  class="btn btn-block text-white signup-button" value="submit" /> </a>
+                    </div>
+                </div>
+            </form>
+
+                <div class="row mt-5 show-me">
+                    <div class="col text-center">
+                        <span style="text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:15px;font-weight:600;color:rgb(148, 141, 141)">or sign up using</span>
+                    </div>
+                </div>
+                <div class="row mt-5 show-me">
+                    <div class='col text-center'>
+                        <span class="facebook-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                        <span class="twitter-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                        <span class="google-icon"><i class="fa fa-google" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+
+                <div class="row mt-5 show-me">
+                    <div class="col text-center">
+                        <span style="text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:15px;font-weight:600;color:rgb(148, 141, 141)">already have an account</span>
+                    </div>
+                    <div class="col-12 text-center pt-3">
+                        <a href="#"><span class="login-page">login</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="JS_files/check_password.js"></script>
+    <script>
+            $( document ).ready(function() {
+
+ // Attach a submit handler to the REGISTER form
+$( "#signup-form" ).submit(function(event) {
+ 
+  // Stop form from submitting normally
+  event.preventDefault();
+ 
+  // Get user values from elements on the page:
+  var $form = $( this ),
+    f_first_name = $form.find( "input[name='first_name']" ).val(),
+    f_last_name = $form.find( "input[name='last_name']" ).val(),
+    f_email = $form.find( "input[name='email']" ).val(),
+    f_location = $form.find( "input[name='location']" ).val(),
+    f_password= $form.find( "input[name='password']" ).val(),
+    f_confirm_password= $form.find( "input[name='confirm_password']" ).val(),
+    f_address= $form.find( "input[name='address']" ).val(),
+    //f_gender = $('#panelist_gender').val(),
+    p_company = 1,
+    url = $form.attr( "action" );
+ 
+  // Send the data using post
+  var posting = $.post( url, { p_name: p_name, p_email: p_email, p_password:p_password, c_password:c_password,p_company:p_company} );
+ 
+  // Put the results in a div || Do something after data is returned
+  posting.done(function( data ) {
+    var content = data;//$( data ).find( "#content" );
+    $( ".result" ).empty().append( content );
+    loadPanelistTable();
+  });
+});
+     
+
+    });
+    </script>
+
+</html>
