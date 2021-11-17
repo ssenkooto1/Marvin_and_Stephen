@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="CSS_files/login-form.css">
+      
+     <script src="JS_files/login-form.js"></script>    
+    
+    </head>
+    <body style="background-size: contain;">
+        <div class="container">
+            <div class="container form bg-white pt-5 mt-4 mb-3">
+              <!--change after click on sign up-->
+              <!--change it-->
+                <p class="text-center login-heading">Update Business Profile</p>
+                
+              <form method="POST" action="scripts/signup.php" id="signup-form"  enctype="multipart/form-data">  
+                <div class="row">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">WhatsApp Number</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fas fa-phone" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="number" id="WhatsApp"  placeholder="Type your WhatsApp Number " class='last-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="whatsapp-hide"></div>
+                    </div>
+                </div>  
+ 
+                <div class="row">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Location</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" id="location" name="location" placeholder="Type your Location " class='last-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="last-name-hide"></div>
+                    </div>
+                </div>  
+
+                  <div class="row">
+                    <div class="col mt-4 pl-5 pr-5">
+                        <p class="username">Address</p>
+                        <div class="row mt-4">
+                            <div class="col-2 text-center pt-1 pr-0">
+                                <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <input type="text" id="address" name="address" placeholder="Type your Address" class='last-name'>
+                            </div>
+                        </div>
+                        <hr class="hr-1">
+                        <div class="last-name-hide"></div>
+                    </div>
+                </div>  
+
+                          <div class="row">
+                            <div class="col mt-4 pl-5 pr-5">
+                        <p><input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                        <p><label for="file" style="cursor: pointer;" class="btn btn-success">Upload Image</label></p>
+                        <p><img id="output" width="200""/></p>
+                    </div>
+                </div>  
+
+                <div class="row mt-4">
+                    <div class="col pl-5 pr-5">
+                        <input  class="btn btn-block text-white signup-button" id="signup-button" value="Update" />
+                     <!--   <a href="login-ecomarce.html"><input  class="btn btn-block text-white signup-button" value="submit" /> </a> -->
+                    </div>
+                </div>
+            </form>
+
+            </div>
+        </div>
+    </body>
+    <!-- <script src="JS_files/check_password.js"></script> -->
+    <script>
+// display loaded image
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+
+// signup button        
+$(document).on("click", "#signup-button", function () {
+
+
+     f_location = document.getElementById("location").value;
+     f_address = document.getElementById("address").value;
+     f_profilepic = document.getElementById("file").value;
+     f_whatsappphoneno =  document.getElementById("WhatsApp").value;
+ 
+            // var posting = $.post( 'scripts/signup.php', { f_firstname: f_firstname, f_lastname: f_lastname, f_phoneno: f_phoneno, f_businessname: f_businessname, 
+            //       f_location: f_location, f_address: f_address, f_password: f_password, f_confirmpassword: f_confirmpassword, f_profilepic: f_profilepic} );
+            var posting = $.post( 'scripts/updateprofile.php', {  f_profilepic: f_profilepic, f_location: f_location, f_address: f_address,
+                                   f_whatsappphoneno: f_whatsappphoneno } );
+                //   if(posting){
+                //       alert("Record updated");
+                //   }
+                  posting.done(function( data ) {
+                      alert(data);
+                });
+                
+});
+    </script>
+
+</html>
