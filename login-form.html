@@ -147,7 +147,7 @@
                         <div class="phone-number-hide" style="color: red;"></div>
                     </div>
                 </div>
-
+<!-- 
                 <div class="row show-me">
                     <div class="col mt-4 pl-5 pr-5">
                         <p class="username">Location</p>
@@ -162,9 +162,9 @@
                         <hr class="hr-1">
                         <div class="last-name-hide"></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="row show-me">
+                <!-- <div class="row show-me">
                     <div class="col mt-4 pl-5 pr-5">
                         <p class="username">Address</p>
                         <div class="row mt-4">
@@ -178,15 +178,15 @@
                         <hr class="hr-1">
                         <div class="last-name-hide"></div>
                     </div>
-                </div>
+                </div> -->
 
-                        <div class="row show-me"">
+                        <!-- <div class="row show-me"">
                             <div class="col mt-4 pl-5 pr-5">
                         <p><input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
                         <p><label for="file" style="cursor: pointer;" class="btn btn-success">Upload Image</label></p>
                         <p><img id="output" width="200""/></p>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row show-me">
                     <div class="col mt-4 pl-5 pr-5">
@@ -276,19 +276,24 @@ $(document).on("click", "#signup-button", function () {
     f_lastname = document.getElementById("last_name").value;
     f_phoneno = document.getElementById("phone_number").value;
     f_businessname = document.getElementById("bussinessname").value;
-    f_location = document.getElementById("location").value;
-    f_address = document.getElementById("address").value;
+   // f_location = document.getElementById("location").value;
+   // f_address = document.getElementById("address").value;
     f_password = document.getElementById("password").value;
     f_confirmpassword = document.getElementById("confirm_password").value;
-    f_profilepic = document.getElementById("file").value;
+  //  f_profilepic = document.getElementById("file").value;
 
 
    // alert(file);
-      console.log(f_firstname);
+   //   console.log(f_firstname);
     if(f_password === f_confirmpassword){
+            // var posting = $.post( 'scripts/signup.php', { f_firstname: f_firstname, f_lastname: f_lastname, f_phoneno: f_phoneno, f_businessname: f_businessname, 
+            //       f_location: f_location, f_address: f_address, f_password: f_password, f_confirmpassword: f_confirmpassword, f_profilepic: f_profilepic, } );
             var posting = $.post( 'scripts/signup.php', { f_firstname: f_firstname, f_lastname: f_lastname, f_phoneno: f_phoneno, f_businessname: f_businessname, 
-                  f_location: f_location, f_address: f_address, f_password: f_password, f_confirmpassword: f_confirmpassword, f_profilepic: f_profilepic, } );
-  
+                  f_password: f_password, f_confirmpassword: f_confirmpassword} );
+                  if(posting){
+                      alert("Record Added");
+                  }
+                
     }
     else{
         alert("Please Confirm your password");
