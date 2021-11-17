@@ -1,7 +1,7 @@
 <?php  
 //Connect to the server and database
 include 'connection.php';
-
+session_start();
 //Pick CREATE ACCOUNT data from HTML forms sent through AJAX
 $lf_username 	= $_POST['lf_username']; 
 $lf_password = $_POST['lf_password'];
