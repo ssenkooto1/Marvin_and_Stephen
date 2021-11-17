@@ -26,7 +26,7 @@
                                     <i class="fa fa-user-o" aria-hidden="true" id="user"></i>
                                 </div>
                                 <div class="col-10 pl-0">
-                                    <input type="text" placeholder="Type your username" class='input-1'>
+                                    <input type="text" id="username" placeholder="Type your username" class='input-1'>
                                 </div>
                             </div>
                             <hr class="hr-1">
@@ -41,7 +41,7 @@
                                     <i class="fa fa-lock" aria-hidden="true" id="lock"></i>
                                 </div>
                                 <div class="col-10 pl-0">
-                                    <input type="password" placeholder="Type your password" class="input-2">
+                                    <input type="password" id="login_password" placeholder="Type your password" class="input-2">
                                 </div>
                             </div>
                             <hr class="hr-2">
@@ -254,7 +254,8 @@
                         <span style="text-transform: capitalize;font-family: Arial, Helvetica, sans-serif;font-size:15px;font-weight:600;color:rgb(148, 141, 141)">already have an account</span>
                     </div>
                     <div class="col-12 text-center pt-3">
-                        <a href="#"><span class="login-page">login</span></a>
+                        <!-- <a href="#"><span class="login-page">login</span></a>       -->
+                        <input  class="btn btn-block text-white login-page" id="login_button" value="login" />
                     </div>
                 </div>
             </div>
@@ -262,6 +263,28 @@
     </body>
     <script src="JS_files/check_password.js"></script>
     <script>
+$(document).on("click", "#login_button", function () {
+    lf_username = document.getElementById("username").value;
+    lf_password = document.getElementById("login_password").value;
+
+    if(f_password === f_confirmpassword){
+            // var posting = $.post( 'scripts/signup.php', { f_firstname: f_firstname, f_lastname: f_lastname, f_phoneno: f_phoneno, f_businessname: f_businessname, 
+            //       f_location: f_location, f_address: f_address, f_password: f_password, f_confirmpassword: f_confirmpassword, f_profilepic: f_profilepic, } );
+            var posting = $.post( 'scripts/login.php', { lf_username: lf_username, lf_password: lf_password} );
+            posting.done(function( data ) {
+            var content = data;//$( data ).find( "#content" );
+            alert(data);
+        });
+    }
+    else{
+        alert("Please Confirm your password");
+    }
+
+
+});
+
+
+// signup button        
 $(document).on("click", "#signup-button", function () {
    // var $form = $( this ),
     // f_name = $form.find( "input[name='first_name']" ).val(),
